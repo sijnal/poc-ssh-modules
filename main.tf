@@ -12,4 +12,3 @@ module "s3_bucket-v4" {
   source = "git::https://github.com/sijnal/poc-tf-modules.git//s3?ref=s3-v4.0.0"
   bucket = "tf-modules-s3"
 }
-
