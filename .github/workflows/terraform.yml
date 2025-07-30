@@ -1,22 +1,29 @@
-name: Terraform
+name: test module con Terraform
+run-name: "test module en ${{ github.ref_name == 'main' && 'producción' || 'desarrollo' }} por @${{ github.actor }}"
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-  workflow_dispatch:
+      - develop
+    paths-ignore:
+      - '.github/workflows/**'
+      - 'README'
+      - '.gitignore'
 
 jobs:
-  terraform:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.12.0
-
-      - name: Terraform Init
-        run: terraform init
+  apply:
+    if: ${{ github.ref_name == 'main' || github.ref_name == 'develop' }}
+    uses: sijnal/gha-reusable-workflows/.github/workflows/terraform-apply.yaml@main
+    with:
+      account-id: "381492264785"
+      aws-role-name: tos-dev-role-github
+      aws-region: 'us-east-1'
+      environment: dev
+      terraform-version: '1.12.0'
+    secrets: inherit
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
