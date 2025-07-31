@@ -6,18 +6,13 @@ on:
   push:
     branches:
       - main
-      - develop
-    paths-ignore:
-      - '.github/workflows/**'
-      - 'README'
-      - '.gitignore'
 
 jobs:
   apply:
     if: ${{ github.ref_name == 'main' || github.ref_name == 'develop' }}
     uses: sijnal/gha-reusable-workflows/.github/workflows/terraform-apply.yaml@main
     with:
-      account-id: "381492264785"
+      account-id: "767398039708"
       aws-role-name: tos-dev-role-github
       aws-region: 'us-east-1'
       environment: dev
