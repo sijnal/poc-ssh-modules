@@ -10,7 +10,7 @@
 
 module "s3_bucket-v4" {
   source = "git::https://github.com/sijnal/poc-tf-modules.git//s3?ref=s3-v4.0.0"
-  bucket = "tf-modules-s3"
+  bucket = "poc-ssh-modules-s3"
 }
 
 module "github_actions_oidc" {
@@ -18,7 +18,7 @@ module "github_actions_oidc" {
   
   role_name = "tos-dev-role-github"
   organization = "sijnal"
-  repository = "poc-tf-modules"
+  repository = "poc-ssh-modules"
   branch = "main"
   attach_administrator_policy = true
 }
