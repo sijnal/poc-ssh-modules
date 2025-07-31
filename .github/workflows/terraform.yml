@@ -12,7 +12,7 @@ jobs:
     if: ${{ github.ref_name == 'main' || github.ref_name == 'develop' }}
     uses: sijnal/gha-reusable-workflows/.github/workflows/terraform-apply.yaml@main
     with:
-      account-id: "767398039708"
+      account-id: "891376985633"
       aws-role-name: tos-dev-role-github
       aws-region: 'us-east-1'
       environment: dev
