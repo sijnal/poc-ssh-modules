@@ -17,6 +17,7 @@ jobs:
       aws-region: 'us-east-1'
       environment: dev
       terraform-version: '1.12.0'
+    secrets: inherit
     permissions:
       id-token: write
       contents: read
