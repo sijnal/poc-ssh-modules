@@ -46,15 +46,15 @@ data "aws_iam_policy_document" "aws_gha_assume_role" {
 }
 
 resource "aws_iam_role" "aws_gha_role" {
-  count = var.role_name == null ? 0 : 1
-  name                 = var.role_name
-  assume_role_policy   = data.aws_iam_policy_document.aws_gha_assume_role[0].json
+  count              = var.role_name == null ? 0 : 1
+  name               = var.role_name
+  assume_role_policy = data.aws_iam_policy_document.aws_gha_assume_role[0].json
 }
 
 resource "aws_iam_role_policy" "administrator_access_policy" {
-  count  = var.attach_administrator_policy ? 1 : 0
-  name   = "administrator_access_policy"
-  role   = aws_iam_role.aws_gha_role[0].id
+  count = var.attach_administrator_policy ? 1 : 0
+  name  = "administrator_access_policy"
+  role  = aws_iam_role.aws_gha_role[0].id
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [

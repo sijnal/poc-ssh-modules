@@ -15,10 +15,10 @@ module "s3_bucket-v4" {
 
 module "github_actions_oidc" {
   source = "./modules/github-actions-oidc"
-  
-  role_name = "tos-dev-role-github"
-  organization = "sijnal"
-  repository = "poc-ssh-modules"
-  branch = "main"
+
+  role_name                   = "tos-dev-role-github"
+  organization                = "sijnal"
+  repository                  = "poc-ssh-modules"
+  branch                      = "main"
   attach_administrator_policy = true
 }
