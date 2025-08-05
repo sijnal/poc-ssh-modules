@@ -1,16 +1,16 @@
 module "s3_bucket-v0" {
-  source = "git@github.com:sijnal/poc-tf-modules.git//s3?ref=vpc-v1.0.0"
-  bucket = "modules-s3"
+  source = "./modules/s3"
+  bucket = "modules-s3-test-1"
 }
 
 # module "s3_bucket-v3" {
-#   source = "git@github.com:sijnal/poc-tf-modules.git//s3?ref=s3-v3.0.0"
-#   bucket = "poc-tf-modules-s3"
+#   source = "./modules/s3"
+#   bucket = "modules-s3-test-2"
 # }
 
 # module "s3_bucket-v4" {
-#   source = "git@github.com:sijnal/poc-tf-modules.git//s3?ref=s3-v4.0.0"
-#   bucket = "poc-ssh-modules-s3"
+#   source = "./modules/s3"
+#   bucket = "modules-s3-test-3"
 # }
 
 # module "github_actions_oidc" {
