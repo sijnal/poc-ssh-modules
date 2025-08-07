@@ -17,7 +17,7 @@ jobs:
       aws-region: 'us-east-1'
       environment: dev
       terraform-version: '1.12.0'
-      required-modules: "s3, vpc, alb"
+      required-modules: "s3 vpc alb"
       modules-ref: "s3-v4.0.0"
     secrets: inherit
     permissions:
