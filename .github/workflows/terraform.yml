@@ -3,13 +3,13 @@ run-name: "test module en ${{ github.ref_name == 'main' && 'producción' || 'des
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
   apply:
-    if: ${{ github.ref_name == 'main' || github.ref_name == 'develop' }}
+    if: ${{ github.base_ref == 'main' || github.base_ref == 'develop' }}
     uses: sijnal/gha-reusable-workflows/.github/workflows/terraform-apply.yaml@main
     with:
       account-id: "471112644131"
