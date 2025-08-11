@@ -4,12 +4,12 @@ module "s3_bucket-v0" {
 }
 
 module "s3_bucket-v3" {
-  source = "./module/s3"
+  source = "./modules/s3"
   bucket = "module-s3-test-2"
 }
 
 module "s3_bucket-v4" {
-  source = "./module/s3"
+  source = "./modules/s3"
   bucket = "module-s3-test-3"
 }
 
