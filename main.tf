@@ -16,10 +16,10 @@ module "s3_bucket-v0" {
 # module "github_actions_oidc" {
 #   source = "./modules/github-actions-oidc"
 
-#   role_name                   = "tos-prod-role-github"
+#   role_name                   = "tos-dev-role-github"
 #   organization                = "sijnal"
 #   repository                  = "poc-ssh-modules"
 #   branch                      = "main"
 #   attach_administrator_policy = true
-#   create_oidc_provider        = false
+#   create_oidc_provider        = true
 # }
