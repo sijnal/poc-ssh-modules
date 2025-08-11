@@ -12,12 +12,12 @@ jobs:
     if: ${{ github.base_ref == 'main' || github.base_ref == 'develop' }}
     uses: sijnal/gha-reusable-workflows/.github/workflows/terraform-apply.yaml@main
     with:
-      account-id: "471112644131"
+      account-id: "590183867409"
       aws-role-name: tos-dev-role-github
       aws-region: 'us-east-1'
       environment: dev
       terraform-version: '1.12.0'
-      required-modules: "s3,vpc,alb,ecs-cluster"
+      required-modules: "s3"
     secrets: inherit
     permissions:
       id-token: write
